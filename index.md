@@ -1,6 +1,5 @@
-# Final Milestone
-
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
+# Human Following Robot
+In this project, I was able to build a human-following robot that uses infrared and ultrasonic sensors to detect and avoid obstacles in real-time. One of my biggest setbacks while working on this project was learning how to utilize C++ to code for the robot to move forward reliably. Additionally, I often made mistakes in my wiring between the Arduino Uno board and the sensors, which further led me to do more troubleshooting in the process. However, overcoming this challenge was both rewarding and allowed me to gain further skills in engineering and coding. 
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
@@ -48,11 +47,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+My project is a human-tracking robot that has the ability to detect and follow a person by maintaining a predetermined distance. For my first milestone, I used components provided to me by the Sunflower Kit, such as the Arduino microcontroller, distance-measuring ultrasonic sensors, infrared sensors to detect obstacles, motor drivers, and DC motors for making movement, to build the foundation of my robot. These components work together by having the sensors receive environmental information, which the Arduino calculates to send signals to the motors to move forward, backward, or turn whenever needed. I have additionally assembled the robot hardware, connected the sensors and motors, and started programming simple movement functionality using C++. My achievements so far are having successfully programmed the robot to move forward and reverse based on sensor input, and additionally, being able to detect something and turn towards it. My main challenges that I am facing include accurately processing sensor information for smooth functionality and debugging wiring issues. By the next milestone, I hope to work on the sensor input processing and improve the robot's response to movement. My strategy to finish the project is to create and implement the human-following algorithm and to achieve stable obstacle avoidance so that the robot can safely and effectively track a human, as well as, think of future modifications to bring to the project. 
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
@@ -61,15 +56,107 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
+const int A_1B = 5;
+const int A_1A = 6;
+const int B_1B = 9;
+const int B_1A = 10;
+
+const int echoPin = 4;
+const int trigPin = 3;
+
+const int rightIR = 7;
+const int leftIR = 8;
+
+float readSensorData() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  float distance = pulseIn(echoPin, HIGH) / 58.00; //Equivalent to (340m/s*1us)/2
+  return distance;
+}
+
+
+void moveForward(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}
+
+void moveBackward(int speed) {
+  analogWrite(A_1B, speed);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}
+
+
+void backLeft(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}
+
+void backRight(int speed) {
+  analogWrite(A_1B, speed);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}
+
+void stopMove() {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}
+
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial.println("Hello World!");
+
+  //motor
+  pinMode(A_1B, OUTPUT);
+  pinMode(A_1A, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+
+  //ultrasonic
+  pinMode(echoPin, INPUT);
+  pinMode(trigPin, OUTPUT);
+
+  //IR obstacle
+  pinMode(leftIR, INPUT);
+  pinMode(rightIR, INPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
+  int left = digitalRead(leftIR);  // 0: Obstructed   1: Empty
+  int right = digitalRead(rightIR);
+
+  if (!left && right) {
+    backLeft(150);
+  } else if (left && !right) {
+    backRight(150);
+  } else if (!left && !right) {
+    moveBackward(150);
+  } else {
+    float distance = readSensorData();
+    Serial.println(distance);
+    if (distance > 50) { // Safe
+      moveForward(200);
+    } else if (distance < 10 && distance > 2) { // Attention
+      moveBackward(200);
+      delay(1000);
+      backLeft(150);
+      delay(500);
+    } else {
+      moveForward(150);
+    }
+  }
 }
 ```
 
