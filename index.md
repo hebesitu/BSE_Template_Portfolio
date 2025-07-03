@@ -17,29 +17,22 @@ You should comment out all portions of your portfolio that you have not complete
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kWnB9jM6kpA?si=0DL_Ej2tFNCeidtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+For my final milestone, I added a piezo buzzer that plays a full melody of "Never Going to Give You Up" as the robot moves. Normally, playing music can block the rest of the program, which would freeze everything else. To solve that, I used non-blocking code with the millis() function. This means the robot can multitask—move, think, and play music—all at the same time. A challenge during this part was coding each note of the piece, and it required a lot of determination and independence. The second biggest challenge I faced was getting all of these components to work together smoothly. At first, using delay() in my music code caused the robot which allowed the robot to move and play music simultaneously without interruptions. This was one of the first projects I’ve ever done where I brought together mechanical construction and coding, and seeing it all move and react in real time felt incredibly satisfactory and rewarding. I joined BlueStamp to combine my science and math interests into one and seeing how hands-on BlueStamp was really gave me a lot of knowledge into the field of Engineering and really encouraged me to consider pursuing it in college. 
+
+
+
 
 
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BpEaHnyZcQY?si=pfgZTjKEUrXrnt0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BpEaHnyZcQY?si=-c-jovfgBJTjMIl6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+For my Second Milestone, I wired the ultrasonic sensor (HC-SR04) to the Arduino's trigPin and echoPin, placing it at the front of the robot to detect objects ahead. I also installed two IR obstacle sensors—one on the left and one on the right—to detect nearby walls or barriers that the ultrasonic sensor might miss. For feedback, I connected a 16x2 I2C LCD screen to the Arduino using just two wires: SDA and SCL. This kept my wiring clean and efficient while allowing me to display live status messages like "Moving Forward," "Turning Left," or "Too Close: Stop." I've also coded it so that when the object is not within 5-15cm, it will also turn towards its IR sensors to avoid obstacles. The hardest challenge during this was making sure all my pins were in the right spot because pin conflicts were super annoying and tedious to troubleshoot. For my future milestone, I'm looking forward to incorporating a piezzo buzzer to play music as the robot is moving. 
 
 # First Milestone
 
@@ -47,7 +40,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Blt-8qQZbdY?si=nN1j8mKGHjOSlnrk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-My project is a human-tracking robot that can detect and follow a person while maintaining a predetermined distance. For my first milestone, I used components provided to me by the Sunflower Kit, such as the Arduino microcontroller, distance-measuring ultrasonic sensors, infrared sensors to detect obstacles, motor drivers, and DC motors for making movement, to build the foundation of my robot. An example of this is when I used four Motor Driver pins to control the two motors (one for each wheel) to allow for us to vary voltage with analogWrite() and allows the robot to move. These components work together by having the sensors receive environmental information, which the Arduino calculates to send signals to the motors to move forward, backward, or turn whenever needed. I have additionally assembled the robot hardware, connected the sensors and motors, and started programming simple movement functionality using C++. My achievements so far are having successfully programmed the robot to move forward and reverse based on sensor input, and additionally, being able to detect something and turn towards it. My main challenges that I am facing include accurately processing sensor information for smooth functionality and debugging wiring issues. By the next milestone, I hope to work on the sensor input processing and improve the robot's response to movement. My strategy to finish the project is to create and implement the human-following algorithm and to achieve stable obstacle avoidance so that the robot can safely and effectively track a human, as well as think of future modifications to bring to the project. 
+My project is a human-tracking robot that can detect and follow a person while maintaining a predetermined distance. For my first milestone, I used components provided to me by the Sunflower Kit, such as the Arduino microcontroller, distance-measuring ultrasonic sensors, infrared sensors to detect obstacles, motor drivers, and DC motors for making movement, to build the foundation of my robot. An example of this is when the robot moves using two DC motors, which are connected to motor driver pins on the Arduino. By using analogWrite() to send PWM signals, the Arduino can adjust motor speed and direction. For example, if the robot needs to turn, it slows down one motor while keeping the other running, which creates a smooth curve instead of a sharp pivot. These components work together by having the sensors receive environmental information, which the Arduino calculates to send signals to the motors to move forward, backward, or turn whenever needed. I have additionally assembled the robot hardware, connected the sensors and motors, and started programming simple movement functionality using C++. My achievements so far are having successfully programmed the robot to move forward and reverse based on sensor input, and additionally, being able to detect something and turn towards it. My main challenges that I am facing include accurately processing sensor information for smooth functionality and debugging wiring issues. By the next milestone, I hope to work on the sensor input processing and improve the robot's response to movement. My strategy to finish the project is to create and implement the human-following algorithm and to achieve stable obstacle avoidance so that the robot can safely and effectively track a human, as well as think of future modifications to bring to the project. 
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
@@ -55,17 +48,162 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
-```c++
+```#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include "pitches.h"
+
+// Motor pins
 const int A_1B = 5;
 const int A_1A = 6;
 const int B_1B = 9;
 const int B_1A = 10;
 
-const int echoPin = 4;
-const int trigPin = 3;
-
+// IR sensors
 const int rightIR = 7;
 const int leftIR = 8;
+
+// Ultrasonic sensor pins
+const int trigPin = 3;
+const int echoPin = 4;
+
+// Buzzer pin
+const int buzzerPin = 11;
+
+// LCD setup (address may need to be changed to 0x3F if 0x27 doesn't work)
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Melody data
+int melody[] = {
+  NOTE_A4, REST, NOTE_B4, REST, NOTE_C5, REST, NOTE_A4, REST,
+  NOTE_D5, REST, NOTE_E5, REST, NOTE_D5, REST,
+  NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_E5, NOTE_E5, REST,
+  NOTE_D5, REST,
+  NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_D5, NOTE_D5, REST,
+  NOTE_C5, REST, NOTE_B4, NOTE_A4, REST,
+  NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5, REST,
+  NOTE_B4, NOTE_A4, NOTE_G4, REST, NOTE_G4, REST, NOTE_D5, REST, NOTE_C5, REST,
+  NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_E5, NOTE_E5, REST,
+  NOTE_D5, REST,
+  NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_G5, NOTE_B4, REST,
+  NOTE_C5, REST, NOTE_B4, NOTE_A4, REST,
+  NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5, REST,
+  NOTE_B4, NOTE_A4, NOTE_G4, REST, NOTE_G4, REST, NOTE_D5, REST, NOTE_C5, REST,
+  NOTE_C5, REST, NOTE_D5, REST, NOTE_G4, REST, NOTE_D5, REST, NOTE_E5, REST,
+  NOTE_G5, NOTE_F5, NOTE_E5, REST,
+  NOTE_C5, REST, NOTE_D5, REST, NOTE_G4, REST
+};
+
+int durations[] = {
+  8, 8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8, 2, 2,
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8,
+  8, 8, 8, 8, 2, 8, 8,
+  4, 8, 8, 8, 8,
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8, 4, 8, 8, 8, 8, 8, 1, 4,
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8,
+  8, 8, 8, 8, 2, 8, 8,
+  2, 8, 8, 8, 8,
+  8, 8, 8, 8, 2, 8, 8,
+  4, 8, 3, 8, 8, 8, 8, 8, 1, 4,
+  2, 6, 2, 6, 4, 4, 2, 6, 2, 3,
+  8, 8, 8, 8,
+  2, 6, 2, 6, 2, 1
+};
+
+// Variables to manage melody timing
+int currentNote = 0;
+unsigned long noteStartTime = 0;
+int noteDuration = 0;
+
+void setup() {
+  Serial.begin(9600);
+
+  // Motor pins
+  pinMode(A_1B, OUTPUT);
+  pinMode(A_1A, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+
+  // IR sensors
+  pinMode(leftIR, INPUT);
+  pinMode(rightIR, INPUT);
+
+  // Ultrasonic sensor
+  pinMode(echoPin, INPUT);
+  pinMode(trigPin, OUTPUT);
+
+  // Buzzer
+  pinMode(buzzerPin, OUTPUT);
+
+  // LCD init
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Robot Starting");
+  delay(1000);
+  lcd.clear();
+}
+
+void loop() {
+  float distance = readSensorData();
+
+  int left = digitalRead(leftIR);   // 0: Obstructed, 1: Clear
+  int right = digitalRead(rightIR);
+
+  int speed = 150;
+
+  // Display distance on first line
+  lcd.setCursor(0, 0);
+  lcd.print("Dist:");
+  if (distance > 0) {
+    lcd.print(distance, 1);
+    lcd.print(" cm   "); // spaces clear leftovers
+  } else {
+    lcd.print("N/A    ");
+  }
+
+  // Movement and status logic
+  if (distance > 5 && distance < 15) {
+    moveForward(speed);
+    lcd.setCursor(0, 1);
+    lcd.print("Moving Forward   ");
+  } else if (distance > 0 && distance <= 5) {
+    stopMove();
+    lcd.setCursor(0, 1);
+    lcd.print("Too Close: Stop  ");
+  } else {
+    if (!left && right) {
+      turnLeft(speed);
+      lcd.setCursor(0, 1);
+      lcd.print("Turning Left    ");
+    } else if (left && !right) {
+      turnRight(speed);
+      lcd.setCursor(0, 1);
+      lcd.print("Turning Right   ");
+    } else {
+      stopMove();
+      lcd.setCursor(0, 1);
+      lcd.print("Stopped         ");
+    }
+  }
+
+  // Serial debug
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.print(" cm, Left IR: ");
+  Serial.print(left);
+  Serial.print(", Right IR: ");
+  Serial.println(right);
+
+  // Play melody non-blocking
+  playMelodyNonBlocking();
+
+  delay(50);
+}
 
 float readSensorData() {
   digitalWrite(trigPin, LOW);
@@ -73,10 +211,16 @@ float readSensorData() {
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  float distance = pulseIn(echoPin, HIGH) / 58.00; //Equivalent to (340m/s*1us)/2
-  return distance;
-}
 
+  long duration = pulseIn(echoPin, HIGH, 30000);  // 30ms timeout
+
+  if (duration == 0) {
+    return -1.0;
+  } else {
+    float distance = duration / 58.0;
+    return distance;
+  }
+}
 
 void moveForward(int speed) {
   analogWrite(A_1B, 0);
@@ -92,20 +236,22 @@ void moveBackward(int speed) {
   analogWrite(B_1A, speed);
 }
 
-
-void backLeft(int speed) {
+void turnLeft(int speed) {
+  int slowSpeed = speed / 2;  // slow down one motor to half speed
   analogWrite(A_1B, 0);
-  analogWrite(A_1A, 0);
+  analogWrite(A_1A, speed);   // full speed on left motor forward
   analogWrite(B_1B, 0);
-  analogWrite(B_1A, speed);
+  analogWrite(B_1A, slowSpeed); // half speed on right motor forward
 }
 
-void backRight(int speed) {
-  analogWrite(A_1B, speed);
+void turnRight(int speed) {
+  int slowSpeed = speed / 2;  // slow down one motor to half speed
+  analogWrite(A_1B, slowSpeed); // half speed on left motor backward
   analogWrite(A_1A, 0);
-  analogWrite(B_1B, 0);
+  analogWrite(B_1B, speed);   // full speed on right motor backward
   analogWrite(B_1A, 0);
 }
+
 
 void stopMove() {
   analogWrite(A_1B, 0);
@@ -114,50 +260,33 @@ void stopMove() {
   analogWrite(B_1A, 0);
 }
 
-void setup() {
-  Serial.begin(9600);
+// Non-blocking melody player function
+void playMelodyNonBlocking() {
+  unsigned long currentTime = millis();
 
-  //motor
-  pinMode(A_1B, OUTPUT);
-  pinMode(A_1A, OUTPUT);
-  pinMode(B_1B, OUTPUT);
-  pinMode(B_1A, OUTPUT);
+  if (currentNote >= (sizeof(durations) / sizeof(int))) {
+    currentNote = 0;  // Restart melody after finishing
+  }
 
-  //ultrasonic
-  pinMode(echoPin, INPUT);
-  pinMode(trigPin, OUTPUT);
+  if (noteStartTime == 0 || currentTime - noteStartTime >= noteDuration) {
+    // Stop previous note
+    noTone(buzzerPin);
 
-  //IR obstacle
-  pinMode(leftIR, INPUT);
-  pinMode(rightIR, INPUT);
-}
+    // Calculate duration of this note
+    noteDuration = 1000 / durations[currentNote];
 
-void loop() {
-
-  int left = digitalRead(leftIR);  // 0: Obstructed   1: Empty
-  int right = digitalRead(rightIR);
-
-  if (!left && right) {
-    backLeft(150);
-  } else if (left && !right) {
-    backRight(150);
-  } else if (!left && !right) {
-    moveBackward(150);
-  } else {
-    float distance = readSensorData();
-    Serial.println(distance);
-    if (distance > 50) { // Safe
-      moveForward(200);
-    } else if (distance < 10 && distance > 2) { // Attention
-      moveBackward(200);
-      delay(1000);
-      backLeft(150);
-      delay(500);
+    if (melody[currentNote] == REST) {
+      // Rest: no tone, just delay
+      noTone(buzzerPin);
     } else {
-      moveForward(150);
+      tone(buzzerPin, melody[currentNote], noteDuration);
     }
+
+    noteStartTime = currentTime;
+    currentNote++;
   }
 }
+
 ```
 
 # Bill of Materials
