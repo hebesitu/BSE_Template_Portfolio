@@ -286,7 +286,7 @@ void playMelodyNonBlocking() {
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| SunFounder 3 in 1 IoT/Smart Car/Learning Kit | Foundation of Robot | $59.99 | [https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://a.co/d/cs1suFn)|
+| SunFounder 3 in 1 IoT/Smart Car/Learning Kit | Foundation of Robot | $59.99 | (https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/)|
 
 
 # Other Resources/Examples
