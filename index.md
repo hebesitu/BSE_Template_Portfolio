@@ -1,17 +1,9 @@
 # Human Following Robot
 In this project, I was able to build a human-following robot that uses infrared and ultrasonic sensors to detect and avoid obstacles in real-time. One of my biggest setbacks while working on this project was learning how to utilize C++ to code for the robot to move forward reliably. Additionally, I often made mistakes in my wiring between the Arduino Uno board and the sensors, which further led me to do more troubleshooting in the process. However, overcoming this challenge was both rewarding and allowed me to gain further skills in engineering and coding. 
 
-
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
-
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Hebe S. | Galileo Academy of Science and Technology | Chemical Engineering | Incoming Senior
-
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Headstone Image](IMG_8015.png)
   
@@ -48,7 +40,8 @@ My project is a human-tracking robot that can detect and follow a person while m
 
 # Code
 
-```#include <Wire.h>
+```
+#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include "pitches.h"
 
@@ -297,9 +290,10 @@ void playMelodyNonBlocking() {
 
 
 # Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+Here are the following tutorials that assisted me in building my project. 
+- [SunFounder Kit Guide](https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_following.html)
+- [Ultrasonic Sensor with Arduino](https://sviatil0.github.io/Sviatoslav_BSE/)
+- [Interfacing IR Sensor With Arduino](https://circuitdigest.com/microcontroller-projects/interfacing-ir-sensor-module-with-arduino)
+- [Liquid Crystal Display with Arduino](https://docs.arduino.cc/learn/electronics/lcd-displays/)
+- [Play Melody Using tone() Function](https://docs.arduino.cc/built-in-examples/digital/toneMelody/)
 
-To watch the BSE tutorial on how to create a portfolio, click here.
