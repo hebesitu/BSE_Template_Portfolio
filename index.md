@@ -1,7 +1,7 @@
 # Human Following Robot
 In this project, I was able to build a human-following robot that uses infrared and ultrasonic sensors to detect and avoid obstacles in real-time. One of my biggest setbacks while working on this project was learning how to utilize C++ to code for the robot to move forward reliably. Additionally, I often made mistakes in my wiring between the Arduino Uno board and the sensors, which further led me to do more troubleshooting in the process. However, overcoming this challenge was both rewarding and allowed me to gain further skills in engineering and coding. 
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
+
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
@@ -289,13 +289,11 @@ void playMelodyNonBlocking() {
 
 ```
 
-# Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
+# Bill of Materials 
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| SunFounder 3 in 1 IoT/Smart Car/Learning Kit | Foundation of Robot | $59.99 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://www.amazon.com/SunFounder-Compatible-Tutorials-Including-Controller/dp/B0B778L1DZ/ref=sr_1_1?crid=CC85YK5U5MNX&dib=eyJ2IjoiMSJ9.D9LrCZJnua_keVMLJz2FWnMatnRawf6KNUIHZfFOQXLGjHj071QN20LucGBJIEps.rSZSDoozYGn-mZJb78nppihXQH-2wD_5JtRiDpG2Wq8&dib_tag=se&keywords=SunFounder+3+in+1+IoT%2FSmart+Car%2FLearning+Kit&qid=1751560670&sprefix=sunfounder+3+in+1+iot%2Fsmart+car%2Flearning+kit%2Caps%2C177&sr=8-1)"> Link </a> |
+| SunFounder 3 in 1 IoT/Smart Car/Learning Kit | Foundation of Robot | $59.99 | [https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://a.co/d/cs1suFn) </a> |
 
 
 # Other Resources/Examples
