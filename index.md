@@ -295,9 +295,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| SunFounder 3 in 1 IoT/Smart Car/Learning Kit | Foundation of Robot | $59.99 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://www.amazon.com/SunFounder-Compatible-Tutorials-Including-Controller/dp/B0B778L1DZ/ref=sr_1_1?crid=CC85YK5U5MNX&dib=eyJ2IjoiMSJ9.D9LrCZJnua_keVMLJz2FWnMatnRawf6KNUIHZfFOQXLGjHj071QN20LucGBJIEps.rSZSDoozYGn-mZJb78nppihXQH-2wD_5JtRiDpG2Wq8&dib_tag=se&keywords=SunFounder+3+in+1+IoT%2FSmart+Car%2FLearning+Kit&qid=1751560670&sprefix=sunfounder+3+in+1+iot%2Fsmart+car%2Flearning+kit%2Caps%2C177&sr=8-1)"> Link </a> |
+
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
