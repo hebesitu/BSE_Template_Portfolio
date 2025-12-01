@@ -1,5 +1,5 @@
 # Human Following Robot
-In this project, I was able to build a human-following robot that uses infrared and ultrasonic sensors to detect and avoid obstacles in real-time. One of my biggest setbacks while working on this project was learning how to utilize C++ to code for the robot to move forward reliably. Additionally, I often made mistakes in my wiring between the Arduino Uno board and the sensors, which further led me to do more troubleshooting in the process. However, overcoming this challenge was both rewarding and allowed me to gain further skills in engineering and coding. 
+This robot is designed to follow objects, avoid obstacles, and display distance data while playing background music. At the core of the robot is an Arduino that reads multiple sensors, controls two DC motors, updates an LCD screen, and runs a non-blocking melody—all through a piezo buzzer at the same time. Using a combination of ultrasonic and infrared sensors, the robot follows objects placed in front of it and responds to walls or hands approaching from the sides.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -7,32 +7,48 @@ In this project, I was able to build a human-following robot that uses infrared 
 
 ![Headstone Image](IMG_8015.png)
   
+# Modification
+For my modification, I integrated three key systems into a platform: an ultrasonic distance follower, dual infrared side-sensing obstacle avoidance, and a non-blocking music playback system. I programmed the robot so it can smoothly follow objects 5–15 cm in front of it, stop automatically when something is too close, avoid obstacles on the sides, and display its status on an LCD screen—all while playing music in the background.
+
 # Final Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kWnB9jM6kpA?si=0DL_Ej2tFNCeidtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-For my final milestone, I added a piezo buzzer that plays a full melody of "Never Going to Give You Up" as the robot moves. Normally, playing music can block the rest of the program, which would freeze everything else. To solve that, I used non-blocking code with the millis() function. This means the robot can multitask—move, think, and play music—all at the same time. A challenge during this part was coding each note of the piece, and it required a lot of determination and independence. The second biggest challenge I faced was getting all of these components to work together smoothly. At first, using delay() in my music code caused the robot which allowed the robot to move and play music simultaneously without interruptions. This was one of the first projects I’ve ever done where I brought together mechanical construction and coding, and seeing it all move and react in real time felt incredibly satisfactory and rewarding. I joined BlueStamp to combine my science and math interests into one, and seeing how hands-on BlueStamp was really gave me a lot of knowledge into the field of Engineering and really encouraged me to consider pursuing it in college. 
+For my final milestone, I successfully combined all mechanical, electrical, and software components into one system. The robot can now:
+- Follow objects with the ultrasonic sensor
+- Avoid side obstacles with the IR sensors
+- Display its state on the LCD
+- Drive two motors smoothly
+- Play music using non-blocking code through Piezzo Buzzer
 
-
-
-
-
+To me, seeing all the parts working together in real time felt incredibly rewarding.
 
 # Second Milestone
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BpEaHnyZcQY?si=-c-jovfgBJTjMIl6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For my Second Milestone, I wired the ultrasonic sensor (HC-SR04) to the Arduino's trigPin and echoPin, placing it at the front of the robot to detect objects ahead. I also installed two IR obstacle sensors—one on the left and one on the right—to detect nearby walls or barriers that the ultrasonic sensor might miss. For feedback, I connected a 16x2 I2C LCD screen to the Arduino using just two wires: SDA and SCL. This kept my wiring clean and efficient while allowing me to display live status messages like "Moving Forward," "Turning Left," or "Too Close: Stop." I've also coded it so that when the object is not within 5-15cm, it will also turn towards its IR sensors to avoid obstacles. The hardest challenge during this was making sure all my pins were in the right spot because pin conflicts were super annoying and tedious to troubleshoot. For my future milestone, I'm looking forward to incorporating a piezo buzzer to play music as the robot moves. 
+For my second milestone, I wired and integrated the robot’s sensing and feedback systems. I connected the ultrasonic sensor (HC-SR04) to the Arduino’s trigPin and echoPin, mounting it at the front of the robot to detect objects directly ahead. Then, I added two IR obstacle sensors: one on the left and one on the right, to detect walls or barriers that the ultrasonic sensor might not catch.
+
+Starting on my modification, I installed a 16×2 I2C LCD, which only uses the SDA and SCL lines. The purpose of this is to display real-time data for the user as the robot moves. This allowed me to keep my wiring clean while allowing me to display status messages such as “Moving Forward,” “Turning Left,” and “Too Close: Stop.” I also programmed the robot so that if no object is detected within the 5–15 cm following range, it automatically switches to IR-based avoidance mode and turns away from obstacles picked up by the side sensors.
+
+The most difficult part of this milestone was managing the wiring and ensuring all my pins were correctly assigned. Pin conflicts caused several frustrating bugs and took time to debug, but fixing them helped me understand how important consistent wiring is.
+
+For my next milestone, I plan to incorporate a piezo buzzer so the robot can play music while it moves, using non-blocking code so it won’t interrupt sensor behavior.
 
 # First Milestone
 
 
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Blt-8qQZbdY?si=nN1j8mKGHjOSlnrk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-My project is a human-tracking robot that can detect and follow a person while maintaining a predetermined distance. For my first milestone, I used components provided to me by the SunFounder Kit, such as the Arduino microcontroller, distance-measuring ultrasonic sensors, infrared sensors to detect obstacles, motor drivers, and DC motors for making movement, to build the foundation of my robot. The Arduino is the core aspect of my project. It reads sensor data, makes decisions, and sends data points out to the other components of the robot. The Arduino is the one that records data points to send them to the motor driver, allowing the robot to move using two DC motors, which are connected to motor driver pins on the Arduino. By using analogWrite() to send PWM signals, the Arduino can adjust motor speed and direction. For example, if the robot needs to turn, it slows down one motor while keeping the other running, which creates a smooth curve instead of a sharp pivot. During this project, I've also added 2 infrared (IR) sensors, one to the left and one to the right of the robot, and an ultrasonic sensor mounted at the front. The IR sensors detect reflected light to tell you where the object is, while the ultrasonic sensors use sound waves to measure the distance of the object. These components work together by having the sensors receive environmental information, which the Arduino calculates to send signals to the motors to move forward, backward, or turn whenever needed. I have additionally assembled the robot hardware, connected the sensors and motors, and started programming simple movement functionality using C++. My achievements so far are having successfully programmed the robot to move forward and reverse based on sensor input, and additionally, being able to detect something and turn towards it. My main challenges that I am facing include accurately processing sensor information for smooth functionality and debugging wiring issues. By the next milestone, I hope to work on the sensor input processing and improve the robot's response to movement. My strategy to finish the project is to create and implement the human-following algorithm and to achieve stable obstacle avoidance so that the robot can safely and effectively track a human, as well as think of future modifications to bring to the project. 
+For my first milestone, I used components provided to me by the SunFounder Kit, such as the Arduino microcontroller, distance-measuring ultrasonic sensors, infrared sensors to detect obstacles, motor drivers, and DC motors for making movement, to build the foundation of my robot. 
+
+The Arduino is the core aspect of my project. It reads sensor data, makes decisions, and sends data points out to the other components of the robot. The Arduino is the one that records data points to send them to the motor driver, allowing the robot to move using two DC motors, which are connected to motor driver pins on the Arduino. By using analogWrite() to send PWM signals, the Arduino can adjust motor speed and direction. For example, if the robot needs to turn, it slows down one motor while keeping the other running, which creates a smooth curve instead of a sharp pivot. 
+
+During this project, I've also added 2 infrared (IR) sensors, one to the left and one to the right of the robot, and an ultrasonic sensor mounted at the front. The IR sensors detect reflected light to tell you where the object is, while the ultrasonic sensors use sound waves to measure the distance of the object. These components work together by having the sensors receive environmental information, which the Arduino calculates to send signals to the motors to move forward, backward, or turn whenever needed. 
+
+At this stage, I assembled the robot’s hardware, connected all sensors and motors, and started programming basic movement in C++. So far, I have successfully programmed the robot to move forward and backward based on sensor readings and to detect nearby objects and turn toward them. My biggest challenges have included processing sensor data reliably and debugging wiring issues—both of which were time-consuming but taught me a lot about hardware-software integration.
+
 
 # Schematics 
 ![Headstone Image](IMG_8023.png)
