@@ -10,6 +10,62 @@ This robot is designed to follow objects, avoid obstacles, and display distance 
 # Modification
 For my modification, I integrated three key systems into a platform: an ultrasonic distance follower, dual infrared side-sensing obstacle avoidance, and a non-blocking music playback system. I programmed the robot so it can smoothly follow objects 5–15 cm in front of it, stop automatically when something is too close, avoid obstacles on the sides, and display its status on an LCD screen—all while playing music in the background.
 
+## Technical Progress
+
+### Current Build
+The robot currently consists of:  
+- Arduino microcontroller  
+- Two DC motors  
+- L9110 H-bridge motor driver  
+- Ultrasonic sensor  
+- Two IR sensors  
+- 16×2 I2C LCD  
+- Buzzer (pin 11)
+
+---
+
+### Core System – The Arduino
+The Arduino acts as the brain of the robot:
+- Reads sensor data from ultrasonic and IR sensors  
+- Makes movement decisions  
+- Sends signals to motors, LCD, and buzzer  
+
+**Ultrasonic Sensor:** Mounted at the front, connected to `trigPin` and `echoPin`  
+**IR Sensors:** One on each side to detect obstacles 
+
+---
+
+### Sensor Logic & Behavior
+
+**Ultrasonic Following Mode:**  
+- Follow objects at 5–15 cm  
+- Stop if too close (<5 cm)  
+
+**IR Avoidance Mode:**  
+- Activate when no object in front  
+- Detect walls or hands  
+- Turn away from detected obstacles
+
+---
+
+### Motor Control
+- Two DC motors connected to the motor driver  
+- Controlled via `analogWrite()` and PWM  
+- Smooth turns by slowing one motor while keeping the other running  
+
+---
+
+### LCD & Buzzer
+**LCD:** 16×2 I2C display shows real-time status (Moving Forward, Turning, Stopping)  
+**Buzzer:** Plays melodies using non-blocking code (millis()), so movement and sensors continue uninterrupted  
+
+---
+
+### Challenges
+1. **Component integration:** Switching from `delay()` to `millis()` allowed simultaneous movement, music, and sensor readings: I struggled with getting the robot to play the music and move simultaneously. This is because `delay()` pauses the entire program, which stops the motors and prevents sensors from being read. By using `millis()`, I was able to track elapsed time without stopping the program and allow the robot to continuously read sensor data, update motor movement, and play music.
+  
+3. **Wiring management:** Pin conflicts: I spent a lot of time double-checking connections, organizing wires, and troubleshooting when things didn’t behave as expected. It taught me the importance of both clean wiring and systematic debugging.
+
 # Final Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kWnB9jM6kpA?si=0DL_Ej2tFNCeidtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
